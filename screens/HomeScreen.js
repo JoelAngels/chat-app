@@ -6,7 +6,7 @@ import {
   Image,
   StyleSheet,
 } from "react-native";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigation } from "@react-navigation/core";
 
 import profile from "../assets/images/person.png";
@@ -26,6 +26,8 @@ const HomeScreen = () => {
   }, []);
 
   const navigation = useNavigation();
+
+  const swipeRef = useRef(null);
 
   const DUMMY_DATA = [
     {
@@ -64,7 +66,7 @@ const HomeScreen = () => {
         </TouchableOpacity>
 
         {/* Tinder Icon */}
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Modal")}>
           <Image source={icon} style={tw`rounded-full h-14 w-14`} />
         </TouchableOpacity>
 
@@ -78,11 +80,19 @@ const HomeScreen = () => {
 
       <View style={tw`flex-1 -mt-6`}>
         <Swiper
+          ref={swipeRef}
           containerStyle={{ backgroundColor: "transparent" }}
           cards={DUMMY_DATA}
           stackSize={5}
           verticalSwipe={false}
           animateCardOpacity
+          onSwipedLeft={() => {
+            console.log("Swiped Left");
+          }}
+          onSwipedRight={() => {
+            console.log("Swiped Right");
+          }}
+          backgroundColor={"#4FD0E9"}
           overlayLabels={{
             left: {
               title: "NOPE",
@@ -110,7 +120,7 @@ const HomeScreen = () => {
               />
 
               <View
-                style={tw`bg-white w-full h-20 bottom-0 justify-between flex-row px-6 py-2 rounded-b-xl`}
+                style={tw`bg-white w-full h-20 bottom-0 justify-between items-center flex-row px-6 py-2 rounded-b-xl`}
               >
                 <View>
                   <Text style={tw`text-xl font-bold`}>
@@ -123,6 +133,22 @@ const HomeScreen = () => {
             </View>
           )}
         />
+      </View>
+
+      <View style={tw`flex-row justify-evenly`}>
+        <TouchableOpacity
+          style={tw`items-center justify-center rounded-full w-16 h-16 bg-red-200`}
+          onPress={() => swipeRef.current.swipeLeft()}
+        >
+          <Entypo name="cross" size={24} color="red" />
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={tw`items-center justify-center rounded-full w-16 h-16 bg-red-200`}
+          onPress={() => swipeRef.current.swipeRight()}
+        >
+          <AntDesign name="heart" size={24} color="green" />
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
