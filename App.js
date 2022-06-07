@@ -1,6 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { useTailwind } from "tailwind-rn";
-import { AuthProvider } from "./hooks/useAuth";
+// import { AuthProvider } from "./hooks/useAuth";
 import StackNavigator from "./StackNavigator";
 
 export default function App() {
