@@ -7,10 +7,10 @@ export default function App() {
   return (
     <NavigationContainer>
       {/* Higher Order Component */}
-      <AuthProvider>
-        {/* Passes down the cool auth stuff to children */}
-        <StackNavigator />
-      </AuthProvider>
+      {/* <AuthProvider> */}
+      {/* Passes down the cool auth stuff to children */}
+      <StackNavigator />
+      {/* </AuthProvider> */}
     </NavigationContainer>
   );
 }

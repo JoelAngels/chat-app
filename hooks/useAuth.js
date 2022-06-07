@@ -1,27 +1,31 @@
-import { View, Text } from "react-native";
-import React, { createContext, useContext } from "react";
+// import { View, Text } from "react-native";
+// import React, { createContext, useContext } from "react";
 
-const AuthContext = createContext({
-  //initial state ...
-});
+// const AuthContext = createContext({
+//   //initial state ...
+// });
 
-export const AuthProvider = ({ children }) => {
-  return (
-    <AuthContext.Provider
-      value={{
-        user: "Joel",
-      }}
-    >
-      {children}
-      {/* me  */}
-    </AuthContext.Provider>
-  );
-};
+// export const AuthProvider = ({ children }) => {
+//   const signInWithGoogle = async () => {
+//     await Google.logInAsy;
+//   };
+//   return (
+//     <AuthContext.Provider
+//       value={{
+//         user: "Joel",
+//       }}
+//     >
+//       {children}
+//     </AuthContext.Provider>
+//   );
+// };
 
-//custom hook
+// //custom hook
 
-export default function useAuth() {
-  return useContext(AuthContext);
+// export default function useAuth() {
+//   return useContext(AuthContext);
 
-  //me
-}
+//   //me
+// }
+
+// //
