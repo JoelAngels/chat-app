@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/core";
 
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../components/Header";
+import ChatList from "../components/ChatList";
 
 const ChatScreen = () => {
   const navigation = useNavigation();
@@ -16,6 +17,7 @@ const ChatScreen = () => {
   return (
     <SafeAreaView>
       <Header title="Chat" callEnabled />
+      <ChatList />
     </SafeAreaView>
   );
 };
