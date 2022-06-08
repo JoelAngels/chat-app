@@ -6,7 +6,7 @@ import {
   Image,
   StyleSheet,
 } from "react-native";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigation } from "@react-navigation/core";
 
 import profile from "../assets/images/person.png";
@@ -18,6 +18,39 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import Swiper from "react-native-deck-swiper";
 
+import { LogBox } from "react-native";
+
+LogBox.ignoreLogs(["EventEmitter.removeListener"]);
+
+const DUMMY_DATA = [
+  {
+    firstName: "Joél Ramirez ",
+    lastName: "Ramirez",
+    occupation: "CTO React Developer",
+    photoURL:
+      "https://joxelstudios.com/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2F19fcc952-b0ee-405a-a2ad-996bf8622b9d%2Fimages%2Fc39f6503-a858-44ef-a0ee-6ab31dd8ada1.jpg&w=640&q=80",
+    age: 26,
+    id: 456,
+  },
+  {
+    firstName: "Joel Angel",
+    lastName: "Baraka",
+    occupation: "Junior React Developer",
+    photoURL: "https://joelangel.web.app/static/media/copy.12fcf0fb.jpg",
+    age: 25,
+    id: 123,
+  },
+
+  {
+    firstName: "Sonny",
+    lastName: "Sangha",
+    occupation: "React Developer",
+    photoURL: "https://joelangel.web.app/static/media/copy.12fcf0fb.jpg",
+    age: 25,
+    id: 789,
+  },
+];
+
 const HomeScreen = () => {
   useEffect(() => {
     navigation.setOptions({
@@ -28,35 +61,6 @@ const HomeScreen = () => {
   const navigation = useNavigation();
 
   const swipeRef = useRef(null);
-
-  const DUMMY_DATA = [
-    {
-      firstName: "Joél Ramirez ",
-      lastName: "Ramirez",
-      occupation: "CTO React Developer",
-      photoURL:
-        "https://joxelstudios.com/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2F19fcc952-b0ee-405a-a2ad-996bf8622b9d%2Fimages%2Fc39f6503-a858-44ef-a0ee-6ab31dd8ada1.jpg&w=640&q=80",
-      age: 26,
-      id: 456,
-    },
-    {
-      firstName: "Joel Angel",
-      lastName: "Baraka",
-      occupation: "Junior React Developer",
-      photoURL: "https://joelangel.web.app/static/media/copy.12fcf0fb.jpg",
-      age: 25,
-      id: 123,
-    },
-
-    {
-      firstName: "Sonny",
-      lastName: "Sangha",
-      occupation: "React Developer",
-      photoURL: "https://joelangel.web.app/static/media/copy.12fcf0fb.jpg",
-      age: 25,
-      id: 789,
-    },
-  ];
 
   return (
     <SafeAreaView style={tw`flex-1`}>
