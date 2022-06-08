@@ -42,11 +42,37 @@ const DUMMY_DATA = [
   },
 
   {
-    firstName: "Sonny",
-    lastName: "Sangha",
-    occupation: "React Developer",
-    photoURL: "https://joelangel.web.app/static/media/copy.12fcf0fb.jpg",
+    firstName: "Mtheus Bertelli",
+    lastName: "Bertelli",
+    occupation: " React Developer",
     age: 25,
+    photoURL:
+      "https://images.pexels.com/photos/573299/pexels-photo-573299.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+
+  {
+    firstName: "Rose",
+    lastName: "Christina",
+    occupation: "Node js Developer",
+    photoURL:
+      "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    age: 50,
+    id: 789,
+  },
+  {
+    firstName: "Joy",
+    lastName: "Shantell",
+    occupation: "Product Manager",
+    photoURL:
+      "https://images.pexels.com/photos/764529/pexels-photo-764529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    id: 789,
+  },
+  {
+    firstName: "Italo",
+    lastName: "Melo",
+    occupation: "Product Manager",
+    photoURL:
+      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     id: 789,
   },
 ];
